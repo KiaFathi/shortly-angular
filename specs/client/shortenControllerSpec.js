@@ -36,7 +36,7 @@ describe('ShortenController', function () {
     expect($scope.link).to.be.an('object');
   });
 
-  it('should have a addLinks method on the $scope', function () {
+  it('should have a addLink method on the $scope', function () {
     expect($scope.addLink).to.be.a('function');
   });
 
