@@ -1,3 +1,10 @@
-<div id='container'>
-  <!-- Your html here -->
+<div id='container' ng-model='shortly.links'>
+  <h1>Links</h1>
+  <div>
+    <ul ng-repeat='item in data.links'>
+      <h3>{{item}}</h3>
+      <a href={{item.code}}>{{item.code}}</a>
+      <p>Visits: {{item.visits}}</p>
+    </ul>
+  </div>
 </div>

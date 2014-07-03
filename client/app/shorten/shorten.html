@@ -1,6 +1,11 @@
-<div id='container'>
-<!-- Your code here -->
-
+<div id='container' ng-model='shortly.shorten'>
+  <h1>Shorten</h1>
+  <h3>Write Links Below</h3>
+  <form name="shortenLinkForm" ng-submit='addLink(link)'>
+    <input type='text'ng-model='link.url'>
+    <button>Submit Shorten</button>
+    <img src='../assets/spiffygif_46x46.gif' ng-if='loading'></img>
+  </form>
 </div>
 
 
