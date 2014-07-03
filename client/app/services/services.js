@@ -3,11 +3,16 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   return {
     getLinks : function(){
-      $http.get('/api/links')
-      .success(function(data, status, headers, config) {
-        console.log(data);
-        return data;
-      });
+      return $http.get('/api/links')
+        .then(function(resp) {
+          return resp.data;
+        });
+    },
+    addLink : function(data){
+      return $http.post('/api/links', data)
+        .then(function(resp){
+          return resp.data;
+        })
     }
   };
 })
