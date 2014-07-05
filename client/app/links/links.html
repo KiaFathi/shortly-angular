@@ -1,10 +1,14 @@
+<a href='/#/shorten'>Shorten a URL</a>
 <div id='container' ng-model='shortly.links'>
   <h1>Links</h1>
   <div>
-    <ul ng-repeat='item in data.links'>
-      <h3>{{item}}</h3>
-      <a href={{item.code}}>{{item.code}}</a>
-      <p>Visits: {{item.visits}}</p>
+    <input type='search' ng-model='search'>
+    <ul class='fx-fade-down fx-easing-bounce fx-speed-800' ng-repeat='item in data.links | orderBy:"visits":!reverse | filter:search' >
+      <div>
+        <h3><strong>{{item.title}}</strong></h3>
+        <p>Visits: {{item.visits}}</p>
+        <a href='api/links/{{item.code}}'>{{item.code}}</a>
+      </div>
     </ul>
   </div>
 </div>
